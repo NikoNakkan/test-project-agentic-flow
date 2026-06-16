@@ -1,0 +1,83 @@
+# test-project-agentic-flow — multi-agent dev workflow (file handoffs + code index)
+# Details: docs/flow/FLOW-CONFIG.md
+version: 1
+
+# What this repo IS (paths that exist today)
+workspace:
+  tasks: docs/working
+  rules: docs/rules
+  context: docs/context
+  agents: .github/agents
+  flow: docs/flow
+  index_db: .code-index/graph.db
+  index_refresh: python scripts/code_index_refresh.py --repo .
+
+# Target app (React + FastAPI PoC — apps/ scaffold on first feature)
+app:
+  frontend: apps/web-react
+  backend: apps/api
+  contract: packages/contract
+  theme: apps/web-react/src/styles/theme.css
+  locales: apps/web-react/src/i18n/locales/
+  tests:
+    fe: vitest
+    be: pytest
+  verify: python scripts/app_build_verify.py --repo .
+
+task:
+  next_number: 2
+
+review:
+  carousel: vscode/askQuestions
+  cursor_tool: AskQuestion
+  cursor_flow: docs/flow/CURSOR-FLOW.md
+  spec: docs/flow/review-carousel.md
+  pause: [spec, plan, step, code, done]
+  options: [Proceed, Other]
+  option_count: 2
+  carousel_only: true
+  chain: docs/flow/carousel-chain.md
+  full: [navigator, fe-design-navigator, be-api-contract, fe-dev, fe-debugger, flow-end-validator]
+  quick: [be-dev, be-testing-agent, fe-testing-agent]
+  code_agents: [be-dev, fe-dev, be-debugger, fe-debugger]
+
+feedback:
+  task_file: feedback.md
+  log: docs/flow/feedback-log.md
+  update_rules: true
+  confirm_writes: true
+  revise_threshold: 3
+
+plan:
+  max_questions: 3
+
+pipelines:
+  feature:
+    - navigator
+    - be-api-contract
+    - be-dev
+    - be-testing-agent
+    - fe-design-navigator
+    - fe-dev
+    - fe-testing-agent
+    - flow-end-validator
+
+  ui:
+    - navigator
+    - fe-design-navigator
+    - fe-dev
+    - fe-testing-agent
+    - flow-end-validator
+
+  api:
+    - navigator
+    - be-api-contract
+    - be-dev
+    - be-testing-agent
+    - flow-end-validator
+
+  bug:
+    - navigator
+    - debugger
+    - testing-agent
+    - flow-end-validator

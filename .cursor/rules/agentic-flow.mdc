@@ -1,0 +1,16 @@
+---
+description: Agentic multi-agent workflow — read config first, file handoffs, checkpoints
+alwaysApply: true
+---
+
+# Agentic flow (this repo)
+
+1. Read `agentic-flow.yaml` and `docs/flow/FLOW-CONFIG.md` before acting.
+2. Hard rules: `docs/rules/agent-decisions.md` — stack, reuse, tests are AI decisions.
+3. Task artifacts live in `docs/working/<TASK-ID>/` — never rely on chat memory alone.
+4. **Carousel-only:** every step ends with AskQuestion; Proceed chains via handoffs (`docs/flow/carousel-chain.md`). User never types commands.
+5. **Build gate:** after every step run `app.verify` from `agentic-flow.yaml` — exit 0 before carousel (`docs/flow/app-build-verify.md`).
+6. Plan-agent first → orchestrator executes one specialist per turn.
+7. Do not commit unless the user asks.
+
+**Walkthrough:** `docs/flow/CURSOR-FLOW.md`

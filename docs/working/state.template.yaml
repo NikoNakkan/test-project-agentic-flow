@@ -1,0 +1,32 @@
+# Orchestrator state — copy to docs/working/<TASK-ID>/state.yaml
+# Gate tiers and pause behavior: agentic-flow.yaml
+
+task_id: TASK-XXX
+goal: ""
+phase: planning # planning | executing | awaiting_human | done | blocked
+current_step: 0
+plan_file: docs/working/TASK-XXX/plan.md
+flow_config: agentic-flow.yaml
+fast_mode: false
+created_at: ""
+updated_at: ""
+
+steps:
+  - id: 1
+    agent: navigator
+    gate: full # full | quick — from review.full / review.quick in agentic-flow.yaml
+    status: pending # pending | in_progress | done | blocked | skipped | stale
+    gate_status: pending # pending | approved | revision_requested
+    revise_count: 0
+    started_at: ""
+    completed_at: ""
+    files_read: []
+    files_written: []
+    notes: ""
+
+  # one entry per row in plan.md — orchestrator fills from plan on first run
+
+blocker: ""
+awaiting_human: false
+human_gate: true
+last_checkpoint: "" # plan_approval | step_N | final_signoff

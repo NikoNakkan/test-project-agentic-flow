@@ -1,0 +1,15 @@
+---
+description: Carousel-only UX — every step ends with AskQuestion; Proceed chains automatically
+alwaysApply: true
+---
+
+# Carousel-only (mandatory)
+
+See [carousel-chain.md](../../docs/flow/carousel-chain.md).
+
+1. **Every agent turn ends with AskQuestion** — Proceed | Other… (2 options). **Nothing after it.**
+2. **User never types** `run orchestrator`, `@agent`, or follow-up commands — only the carousel.
+3. **On Proceed:** handoff to next agent with `send: true` (plan-agent → orchestrator → specialist → orchestrator → …).
+4. **On Other:** feedback → revise → AskQuestion again.
+
+**Forbidden closing lines:** "Run orchestrator", "Next: @...", "Switch to Agent mode", "Reply proceed in chat".

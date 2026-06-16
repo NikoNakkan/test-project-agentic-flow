@@ -1,0 +1,51 @@
+openapi: 3.1.0
+info:
+  title: Hello World API
+  version: 0.1.0
+  description: PoC API for Hello World click counter.
+
+servers:
+  - url: http://localhost:8000
+    description: Local development
+
+paths:
+  /hello-world/count:
+    get:
+      operationId: getHelloWorldCount
+      summary: Get current click count
+      tags:
+        - hello-world
+      responses:
+        "200":
+          description: Current counter value
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HelloWorldCount"
+
+  /hello-world/click:
+    post:
+      operationId: incrementHelloWorldCount
+      summary: Increment click counter by one
+      tags:
+        - hello-world
+      responses:
+        "200":
+          description: Updated counter value after increment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HelloWorldCount"
+
+components:
+  schemas:
+    HelloWorldCount:
+      type: object
+      required:
+        - count
+      properties:
+        count:
+          type: integer
+          minimum: 0
+          description: Total number of Hello World button clicks
+          example: 42

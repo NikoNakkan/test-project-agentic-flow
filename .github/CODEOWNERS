@@ -1,0 +1,4 @@
+# These owners will be the default owners for everything in  the repo.
+# Unless a later match takes precedence, @global-owner1 and @global-owner2 will be requested for review when someone opens a pull request.
+# (remove the # from the following line and replace global-owner1 and global-owner2 with the actual usernames)
+# *       @global-owner1 @global-owner2
