@@ -13,7 +13,7 @@ Every agent turn **ends** with **AskQuestion** (2 options: Proceed | Other…). 
 | **plan-agent** | Set plan approved → **handoff orchestrator** `send: true` |
 | **orchestrator** | Mark step done → **run next plan step** (handoff to specialist `send: true`, or execute inline) |
 | **any specialist** | **handoff orchestrator** `send: true` — "Step N done; update state + checkpoint" |
-| **orchestrator** (final) | Mark `phase: done` → AskQuestion once more → Proceed closes task |
+| **orchestrator** (final) | Mark `phase: done` → AskQuestion once more → Proceed closes task — **no git commit** |
 
 ## On Other
 

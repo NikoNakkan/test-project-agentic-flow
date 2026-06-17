@@ -28,6 +28,8 @@
 | `feedback.promote_question` | AskQuestion options: Yes add to rules · No task only |
 | `plan.max_questions` | Spec questions before `plan.md` |
 | `pipelines.*` | Default steps; plan-agent omits by scope |
+| `git.commit` | `user_only` — agents never commit unless user asks |
+| `git.forbid_on_final_step` | No `git commit` on `flow-end-validator` / task close |
 
 ## Gate tier
 

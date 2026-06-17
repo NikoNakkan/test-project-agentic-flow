@@ -45,7 +45,7 @@ Update state.yaml when done. End with AskQuestion; Proceed → handoff orchestra
 
 ## Final step
 
-After `flow-end-validator` → AskQuestion → Proceed sets `phase: done` in `state.yaml` + INDEX.
+After `flow-end-validator` → AskQuestion → Proceed sets `phase: done` in `state.yaml` + INDEX. **Never `git commit` on the final step** — user commits when ready.
 
 ## Never
 
@@ -54,3 +54,4 @@ After `flow-end-validator` → AskQuestion → Proceed sets `phase: done` in `st
 - Ask user to @mention agents or switch modes
 - Edit `plan.md`
 - Mark step done while `app_build_verify` fails
+- Run `git commit` on the final step (`flow-end-validator`) — user only

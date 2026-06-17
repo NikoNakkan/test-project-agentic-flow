@@ -117,6 +117,7 @@ python scripts/dump_graph.py
 - Hand-edit `symbol_id`, `tests`, or `depends_on` in context MDs
 - Skip validate because "it probably works"
 - Mark `phase: done` with a failing refresh or failing app build
+- **Run `git commit`** — final step never commits; user commits when ready (`agentic-flow.yaml` → `git.forbid_on_final_step`)
 
 ## End of turn
 

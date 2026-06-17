@@ -9,3 +9,4 @@
 7. Build gate: `python scripts/app_build_verify.py --repo .` after every step — exit 0.
 8. Rule promotion: on Other + pattern feedback → `docs/flow/rule-promotion.md` (AskQuestion: Yes add to rules | No task only).
 9. Bug-fix: debugger → `test-gap.md` → testing agent → `flow-end-validator`.
+10. Never `git commit` on final step — user commits when ready.

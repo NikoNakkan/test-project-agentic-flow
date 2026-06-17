@@ -154,6 +154,7 @@ Every plan must:
 - Skip testing only if `missing_tests` empty and no `test-gap.md`; never skip navigator step 1
 - Never ask user to choose stack, reuse, or test policy in checkpoint dialog
 - Final sign-off dialog after `flow-end-validator` before `phase: done`
+- **Never `git commit` on final step** — `git.forbid_on_final_step` in agentic-flow.yaml; user commits when ready
 
 ---
 

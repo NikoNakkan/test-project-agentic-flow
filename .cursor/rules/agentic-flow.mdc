@@ -12,6 +12,6 @@ alwaysApply: true
 5. **Build gate:** after every step run `app.verify` from `agentic-flow.yaml` — exit 0 before carousel (`docs/flow/app-build-verify.md`).
 6. Plan-agent first → orchestrator executes one specialist per turn.
 7. **Rule promotion:** on Other + pattern feedback → [rule-promotion.md](../../docs/flow/rule-promotion.md) before revise.
-8. Do not commit unless the user asks.
+8. Do not commit unless the user asks — **never on final step** (`flow-end-validator` / `phase: done`).
 
 **Walkthrough:** `docs/flow/CURSOR-FLOW.md`

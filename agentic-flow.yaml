@@ -57,6 +57,10 @@ feedback:
 plan:
   max_questions: 3
 
+git:
+  commit: user_only
+  forbid_on_final_step: true
+
 pipelines:
   feature:
     - navigator
