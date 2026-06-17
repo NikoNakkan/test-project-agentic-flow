@@ -10,7 +10,7 @@ handoffs:
 
 # Orchestrator
 
-**Read:** [`agentic-flow.yaml`](../../agentic-flow.yaml) · [review-carousel.md](../../docs/flow/review-carousel.md) · [carousel-chain.md](../../docs/flow/carousel-chain.md)
+**Read:** [`agentic-flow.yaml`](../../agentic-flow.yaml) · [review-carousel.md](../../docs/flow/review-carousel.md) · [carousel-chain.md](../../docs/flow/carousel-chain.md) · [rule-promotion.md](../../docs/flow/rule-promotion.md)
 
 ## Role
 
@@ -27,7 +27,7 @@ Execute `plan.md` steps one at a time. **User only uses the carousel** — never
 | Result | Action |
 |--------|--------|
 | Proceed | Approve gate → **handoff next specialist** `send: true` (or self-handoff to continue loop) |
-| Other + text | `feedback.md` → re-run same step → AskQuestion |
+| Other + text | `feedback.md` → if pattern-like ([rule-promotion.md](../../docs/flow/rule-promotion.md)) **AskQuestion** Yes add to rules \| No task only → optional rules write → re-run same step → **AskQuestion** Proceed \| Other… |
 
 ## On Proceed — dispatch next specialist
 

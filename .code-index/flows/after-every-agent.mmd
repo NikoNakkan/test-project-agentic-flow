@@ -1,0 +1,37 @@
+%% After every agent — cross-cutting band (build verify + carousel + rule promotion)
+flowchart LR
+  SPEC[Any specialist]
+
+  subgraph band["After every agent"]
+    direction LR
+    VFY[app_build_verify]
+    ST["state.yaml + run-log.md"]
+    CAR["AskQuestion · Proceed | Other"]
+  end
+
+  SPEC --> VFY --> ST --> CAR
+
+  CAR -->|Proceed| ORCH[orchestrator]
+  CAR -->|Other| FB[feedback.md]
+
+  FB --> PAT{pattern-like?}
+  PAT -->|no| RERUN[re-run same step]
+  PAT -->|yes| PROMO["AskQuestion · Yes add to rules | No task only"]
+  PROMO -->|Yes| RULES["docs/rules + feedback-log"]
+  PROMO -->|No| RERUN
+  RULES --> RERUN
+  RERUN --> SPEC
+
+  classDef agent fill:#dbeafe,stroke:#2563eb,color:#1e3a8a
+  classDef gate fill:#dcfce7,stroke:#16a34a,color:#14532d
+  classDef carousel fill:#fef9c3,stroke:#ca8a04,color:#713f12
+  classDef orch fill:#fce7f3,stroke:#db2777,color:#831843
+  classDef feedback fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+  classDef promo fill:#fef3c7,stroke:#d97706,color:#92400e
+
+  class SPEC agent
+  class VFY,ST gate
+  class CAR carousel
+  class ORCH orch
+  class FB,RERUN feedback
+  class PROMO,RULES promo

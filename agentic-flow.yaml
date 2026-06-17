@@ -44,9 +44,15 @@ review:
 feedback:
   task_file: feedback.md
   log: docs/flow/feedback-log.md
+  spec: docs/flow/rule-promotion.md
   update_rules: true
   confirm_writes: true
   revise_threshold: 3
+  promote_patterns: true
+  promote_triggers: [always, never, from now on, convention, standard, new rule, every time, add to rules]
+  promote_question:
+    tool: AskQuestion
+    options: [Yes add to rules, No task only]
 
 plan:
   max_questions: 3

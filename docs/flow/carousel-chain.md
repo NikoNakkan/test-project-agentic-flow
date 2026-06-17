@@ -17,7 +17,7 @@ Every agent turn **ends** with **AskQuestion** (2 options: Proceed | Other…). 
 
 ## On Other
 
-Append `feedback.md` → revise same step → **AskQuestion again**.
+Append `feedback.md` → if pattern-like ([rule-promotion.md](rule-promotion.md)) **AskQuestion** Yes add to rules | No task only → optional rules write → revise same step → **AskQuestion** again.
 
 ## Handoff template (Cursor)
 

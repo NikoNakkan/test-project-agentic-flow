@@ -22,7 +22,10 @@
 | `review.pause` | When to show carousel: `spec`, `plan`, `step`, `code`, `done` |
 | `review.full` / `review.quick` | Gate depth — full dialog vs quick skim |
 | `review.code_agents` | Extra `code` checkpoint after these agents |
-| `feedback.*` | Notes → optional permanent update to `workspace.rules` or `workspace.context` |
+| `feedback.*` | Notes → optional permanent update to `workspace.rules` — see [rule-promotion.md](rule-promotion.md) |
+| `feedback.promote_patterns` | When true, ask to add pattern-like Other feedback to rules |
+| `feedback.promote_triggers` | Words that signal reusable pattern (always, never, …) |
+| `feedback.promote_question` | AskQuestion options: Yes add to rules · No task only |
 | `plan.max_questions` | Spec questions before `plan.md` |
 | `pipelines.*` | Default steps; plan-agent omits by scope |
 
@@ -51,4 +54,4 @@ Agent in `review.full` → **full** · in `review.quick` → **quick** · else �
 
 ## Review carousel
 
-**AskQuestion** with **2 options** (Proceed | Other…) — never a third "Give feedback" button. Spec: [review-carousel.md](review-carousel.md).
+**AskQuestion** with **2 options** (Proceed | Other…) — never a third option on the step carousel. Pattern feedback may trigger a separate promotion question first: [rule-promotion.md](rule-promotion.md).

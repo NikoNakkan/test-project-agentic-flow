@@ -8,6 +8,6 @@ alwaysApply: true
 1. Skim paths (1–3 bullets in prompt only).
 2. **AskQuestion** — Proceed | Other… — **last action of the turn**.
 3. **Proceed** → handoff next agent per [carousel-chain.md](../../docs/flow/carousel-chain.md) with `send: true`.
-4. **Other** → feedback → revise → AskQuestion again.
+4. **Other** → append [feedback.md](../../docs/working/feedback.template.md) → if pattern-like per [rule-promotion.md](../../docs/flow/rule-promotion.md), **AskQuestion** Yes add to rules | No task only → revise → **AskQuestion** Proceed | Other… again.
 
-Never ask the user to type a command or @mention an agent.
+Never ask the user to type a command or @mention an agent. Never add a third option to the step carousel.

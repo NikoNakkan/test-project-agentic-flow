@@ -11,7 +11,7 @@ handoffs:
 
 # Plan Agent
 
-**Read:** [`agentic-flow.yaml`](../../agentic-flow.yaml) · [review-carousel.md](../../docs/flow/review-carousel.md) · [carousel-chain.md](../../docs/flow/carousel-chain.md)
+**Read:** [`agentic-flow.yaml`](../../agentic-flow.yaml) · [review-carousel.md](../../docs/flow/review-carousel.md) · [carousel-chain.md](../../docs/flow/carousel-chain.md) · [rule-promotion.md](../../docs/flow/rule-promotion.md)
 
 User gives one goal. Hard rules from [agent-decisions.md](../../docs/rules/agent-decisions.md). No application code.
 
@@ -40,7 +40,7 @@ Max: `plan.max_questions`. Use **AskQuestion** for spec too (2 options) — not 
 | Result | Action |
 |--------|--------|
 | Proceed | Set plan **approved** → handoff **orchestrator** `send: true` |
-| Other + text | `feedback.md` → revise plan → AskQuestion again |
+| Other + text | `feedback.md` → if pattern-like ([rule-promotion.md](../../docs/flow/rule-promotion.md)) **AskQuestion** Yes add to rules \| No task only → optional rules write → revise plan → **AskQuestion** Proceed \| Other… |
 
 ## Never
 

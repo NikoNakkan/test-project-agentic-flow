@@ -149,7 +149,7 @@ Every plan must:
 - Proceed when `plan.md` approved (after plan dialog)
 - **Review checkpoint** — **AskQuestion** with 2 options: Proceed | Other… ([review-carousel.md](../flow/review-carousel.md))
 - Gate tier from `review.full` / `review.quick`
-- Capture notes in `feedback.task_file`; update rules/context when `feedback.update_rules` (confirm if `confirm_writes`)
+- Capture notes in `feedback.task_file`; on pattern-like Other feedback run promotion flow ([rule-promotion.md](../flow/rule-promotion.md)) — AskQuestion Yes add to rules | No task only before revise
 - After `feedback.revise_threshold` same revises → propose rule/agent edit
 - Skip testing only if `missing_tests` empty and no `test-gap.md`; never skip navigator step 1
 - Never ask user to choose stack, reuse, or test policy in checkpoint dialog

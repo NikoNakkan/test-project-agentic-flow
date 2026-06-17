@@ -7,7 +7,7 @@ Per-task folder: `docs/working/<TASK-ID>/`. Flow behavior: [`agentic-flow.yaml`]
 | `plan.md` | plan-agent | user, orchestrator | Goal, decisions, tech proposals, steps — **user approves before step 1** |
 | `state.yaml` | orchestrator | orchestrator | Machine state, gate status, staleness |
 | `run-log.md` | orchestrator | user, plan-agent | Human audit trail |
-| `feedback.md` | orchestrator, plan-agent | user | Dialog review notes; drives rule/context updates |
+| `feedback.md` | orchestrator, plan-agent | user | Dialog review notes; pattern feedback → [rule-promotion.md](../flow/rule-promotion.md) |
 | `findings.md` | navigator, fe-design-navigator | fe-dev, user | Reuse/create + design findings |
 | `contract-summary.md` | be-api-contract | user | Readable API summary at checkpoints |
 | `be-test-handoff.md` | be-dev | be-testing-agent | BE test brief |
